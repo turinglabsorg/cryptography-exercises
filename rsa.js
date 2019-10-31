@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
+
 if(argv.t !== undefined){
     if(argv.e !== undefined){
         fs.readFile('./keys/pub', (err, publicKey) => {

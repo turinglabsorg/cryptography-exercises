@@ -1,5 +1,4 @@
 const { createECDH, ECDH } = require('crypto');
-var fs = require('fs');
 
 const alice = createECDH('secp256k1');
 alice.generateKeys();
@@ -19,7 +18,6 @@ let bobKeys = {
 
 const aliceSecret = alice.computeSecret(bob.getPublicKey(), null, 'hex');
 const bobSecret = bob.computeSecret(alice.getPublicKey(), null, 'hex');
-
 console.log(JSON.stringify(aliceKeys))
 console.log(JSON.stringify(bobKeys))
 console.log(aliceSecret)
