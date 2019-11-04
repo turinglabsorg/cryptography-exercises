@@ -6,8 +6,8 @@ if(argv.t !== undefined){
     if(argv.e !== undefined){
         fs.readFile('./keys/pub', (err, publicKey) => {
             if (err) throw err;
-            var buffer = Buffer.from(argv.t)
-            var encrypted = crypto.publicEncrypt(publicKey, buffer)
+            let buffer = Buffer.from(argv.t);
+            let encrypted = crypto.publicEncrypt(publicKey, buffer);
             console.log(encrypted.toString("base64"))
         });
     }else if(argv.d !== undefined){
