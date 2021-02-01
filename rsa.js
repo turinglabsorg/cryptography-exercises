@@ -14,7 +14,7 @@ if(argv.t !== undefined){
 
         fs.readFile('./keys/prv', (err, privateKey) => {
             if (err) throw err;
-            var buffer = Buffer.from(argv.d, "base64")
+            var buffer = Buffer.from(argv.t, "base64")
             var decrypted = crypto.privateDecrypt(
                 { key: privateKey.toString() },
                 buffer,
